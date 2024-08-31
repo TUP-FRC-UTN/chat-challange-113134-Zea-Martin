@@ -1,0 +1,24 @@
+<div class="container mt-5 card">
+  <div class="card-cuerpo">
+    <div class="card-title">
+      <h3>Sala de Chat</h3>
+    </div>
+    <hr />
+    <div class="card-body">
+      <h2 class="card-title">Conversación</h2>
+      @for (mensaje of mensajes; track mensaje; let index = $index) {
+      <p>
+        <strong>{{ mensaje.usuario }}: </strong>{{ mensaje.texto }}
+      </p>
+      }
+    </div>
+  </div>
+  <div class="container d-flex">
+    @for (usuario of usuarios; track usuario;let index = $index) {
+    <app-mensaje-usuario
+      [user]="usuario"
+      (nuevoMensaje)="onAgregarMensaje(usuario, $event)"
+    />
+    }
+  </div>
+</div>

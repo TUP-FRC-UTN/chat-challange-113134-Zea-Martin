@@ -1,0 +1,12 @@
+<form (ngSubmit)="agregarMensaje()">
+  <div class="form-group">
+    <!-- <label [usuario]="user">Usuario: {{user}}</label> -->
+    <label>Usuario: {{ user }}</label>
+    <hr />
+    <label>Mensaje: </label>
+    <textarea [(ngModel)]="texto" rows="3" class="form-control mb-2" name="mensajejkl"></textarea>
+    <button type="submit" class="btn btn-primary">
+      Guardar
+    </button>
+  </div>
+</form>
